@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1> <strong>Rock, Paper, Scissors</strong></h1>
+
+    <div class="legend">
+        <div class="moves">
+            <img class ="icon" src="./images/rock.png" alt="Rock">
+            <span class="caption">Rock</span>
+        </div>
+        <div class="moves">
+            <img class ="icon" src="./images/paper.png" alt ="Paper"> 
+            <span class="caption">Paper</span>
+        </div>
+        <div class="moves">
+            <img class ="icon" src="./images/scissors.png" alt="Scissors"> 
+            <span class="caption">Scissors</span>
+        </div>
+    </div>
+
+    <div class="roundInfo">
+        Best of 3 Rounds
+        <div id="currRound">
+            Current Round: 1
+        </div>
+    
+        <button id="next-round-btn" type="button">Click to start next round</button>
+    </div>
+
+    
+   
+
+    <div class="boxes">
+        <div class="you">
+            You
+            <div class="score">
+                Score: 
+                <span id="yourScore"> </span>
+            </div>
+
+            <div class="handOptions" id="yourMove">
+                <img id="youRock" class="icon" src="./images/rock.png" alt="Your Rock">
+                <img id="youPaper" class="icon" src="./images/paper.png" alt="Your Paper">
+                <img id="youScissor" class="icon" src="./images/scissors.png" alt="Your Scissors"> 
+            </div>
+        </div>
+
+        <div class="computer">
+            Computer
+            <div class="score">
+                Score: 
+                <span id="compScore"></span>
+            </div>
+
+            <div class="handOptions">
+                <img id="compRock" class="icon" src="./images/rock.png" alt="Computer Rock">
+                <img id="compPaper" class="icon" src="./images/paper.png" alt="Computer Paper"> 
+                <img id="compScissors" class="icon" src="./images/scissors.png" alt="Computer Scissors"> 
+            </div>
+        </div>
+    </div>
+
+    <div id ="roundResultWrapper">
+        Round #
+        <span id="roundResult"></span>
+    </div>
+
+    <div id ="winnerWrapper">
+        <span id="winner"></span>
+        Refresh the page to play again!
+    </div>
+
+</body>
+</html>
