@@ -3,13 +3,6 @@
 
 ### [Play at this link](https://ohsweetmani.github.io/Rock-Paper-Scissors-Game/)
 
-### Legend
- | 
- ------- |  -------
- Rock | ![Rock](./images/rock.png)
- Paper | ![Paper](./images/paper.png)
- Scissors | ![Scissors](./images/scissors.png)
-
 * Rock beats Scissors
 * Scissors beats Paper
 * Paper beats Rock 
@@ -22,5 +15,3 @@
 3. After the first round, to continue playing, you must click the **Start Next Round** button.
 
 4. At the end of 3 rounds, whoever has the most points will be crowned the winner. 
-
-
