@@ -42,14 +42,9 @@ h1 {
     font-weight: bold;
 }
 
-.roundInfo, 
-#currRound,
-#next-round-btn {
+.roundInfo {
     font-weight: bold;
     text-align: center;
-}
-
-.roundInfo {
     font-size: 25px; 
     color:rgb(77, 74, 74);
 }

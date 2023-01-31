@@ -1,5 +1,4 @@
 function rockMove() {
-    //Display animation? Let's play?  @ currRound= 0
     playRound('rock');
     return 'rock';
 }
@@ -54,7 +53,6 @@ function playRound(yourMove) {
   moveElem = yourMoves.get(yourMove);
   moveElem.classList.add('yellowBg');
 
-
   //Generate computer move
   let compMove = moveComputer();
   
@@ -65,27 +63,27 @@ function playRound(yourMove) {
     yourScore += 1;
     compScore += 1;
     result = "tie"; 
-
+    
   } else if ( (yourMove == 'rock' & compMove == 'scissors') ||
              (yourMove == 'paper' & compMove == 'rock') || 
              (yourMove == 'scissors' & compMove == 'paper') ){
     
     yourScore += 1;
     result = "You win!";
-    
+
   } else {
 
     compScore += 1;
     result = "You lose!";
-
+    
   }
 
   displayRoundResults(result);
  
-  //--> declare OVERALL winner 
+  //Find Overall Winner
   if (currRound == rounds) {
     declareWinner();
-    currRound += 1; //Need to increment so that player play past 3 rounds
+    currRound += 1; //Increment so player can't play past 3 rounds.
     return;
   }
 
@@ -139,7 +137,7 @@ function resetRound() {
     document.getElementById('roundResultWrapper').style.display =  "none" ;
     document.getElementById('next-round-btn').style.display = "none";
 
-    //Update current round
+    //Update current round #
     document.getElementById('currRound').textContent = "Current Round: " + currRound;
 }
 
@@ -151,6 +149,8 @@ function declareWinner() {
     winnerElem = document.getElementById('winner');
     if (yourScore > compScore) {
         winnerElem.textContent = "You Win!!";
+    } else if (yourScore == compScore) {
+        winnerElem.textContent = "It's a tie!";
     } else {
         winnerElem.textContent = "You lose!!";
     }
