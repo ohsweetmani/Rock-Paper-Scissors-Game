@@ -1,26 +1,26 @@
 function rockMove() {
-    playRound('rock');
+    playRound('rock', rockElem);
     return 'rock';
 }
 
 const rockElem = document.getElementById("youRock");
 rockElem.addEventListener('click', rockMove);
 
+function paperMove() {
+  playRound('paper', paperElem);
+  return 'paper';
+}
+
+const paperElem = document.getElementById("youPaper");
+paperElem.addEventListener('click', paperMove);
+
 function scissorMove() {
-    playRound('scissors');
+    playRound('scissors', scissorElem);
     return 'scissors';
 } 
 
 const scissorElem = document.getElementById("youScissor");
 scissorElem.addEventListener('click', scissorMove);
-
-function paperMove() {
-    playRound('paper');
-    return 'paper';
-}
-
-const paperElem = document.getElementById("youPaper");
-paperElem.addEventListener('click', paperMove);
 
 var currRound = 1;
 var rounds = 3;
@@ -30,7 +30,7 @@ var compScore = 0;
 
 const buttonElem = document.getElementById('next-round-btn');
 
-function playRound(yourMove) {
+function playRound(yourMove, yourMoveElem) {
 
   if (currRound > rounds) {
     alert("Please refresh the page to start a new game!");
@@ -44,14 +44,7 @@ function playRound(yourMove) {
     return;
   }
 
-  //Apply yellow background to your move
-  let yourMoves = new Map([
-    ['rock', rockElem],
-    ['paper', paperElem],
-    ['scissors', scissorElem]
-  ]);
-  moveElem = yourMoves.get(yourMove);
-  moveElem.classList.add('yellowBg');
+  yourMoveElem.classList.add('yellowBg');
 
   //Generate computer move
   let compMove = moveComputer();
@@ -100,8 +93,8 @@ function moveComputer() {
     let optionPos = Math.floor(Math.random()*3);
     let move = computerOptions[optionPos];
 
-    let moveElem = document.getElementById(move);
-    moveElem.classList.add('yellowBg');
+    let compMoveElem = document.getElementById(move);
+    compMoveElem.classList.add('yellowBg');
 
     //Get move in general terms
     let compMoves = new Map([
